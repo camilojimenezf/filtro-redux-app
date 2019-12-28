@@ -3,6 +3,8 @@ import { Todo } from '../model/todo.model';
 import { AppState } from 'src/app/app.reducers';
 import { Store } from '@ngrx/store';
 
+import * as fromFilter from '../../filter/filter.actions';
+
 @Component({
   selector: 'app-todos-list',
   templateUrl: './todos-list.component.html',
@@ -11,7 +13,7 @@ import { Store } from '@ngrx/store';
 export class TodosListComponent implements OnInit {
 
   todos: Todo[] = [];
-  filtro: string;
+  filtro: fromFilter.filtrosValidos;
 
   constructor( private store: Store<AppState>) { }
 
